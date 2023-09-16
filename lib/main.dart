@@ -18,10 +18,14 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.black,
-        body: StreamBuilder(
+        body: StreamBuilder<BinaryClock>(
           stream: binaryClock.update(),
           initialData: binaryClock,
-          builder: (context, snapshot) => CustomPaint(
+          builder: (
+            BuildContext context,
+            AsyncSnapshot<BinaryClock> snapshot,
+          ) =>
+              CustomPaint(
             size: const Size(size, size),
             painter: BinaryClockPainter(snapshot.data!),
           ),

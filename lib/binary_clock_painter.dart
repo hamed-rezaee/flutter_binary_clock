@@ -12,36 +12,40 @@ class BinaryClockPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final NumberFormat numberFormat = NumberFormat('00');
 
-    binaryClock.drawText(
-      canvas,
-      size,
-      'Hour ${numberFormat.format(binaryClock.hour)}',
-    );
-    binaryClock.drawBinaryDigit(canvas, size, binaryClock.hour);
+    binaryClock
+      ..drawText(
+        canvas,
+        size,
+        'Hour ${numberFormat.format(binaryClock.hour)}',
+      )
+      ..drawBinaryDigit(canvas, size, binaryClock.hour);
 
     canvas.translate(0, size.height / 2);
-    binaryClock.drawText(
-      canvas,
-      size,
-      'Minute ${numberFormat.format(binaryClock.minute)}',
-    );
-    binaryClock.drawBinaryDigit(canvas, size, binaryClock.minute);
+    binaryClock
+      ..drawText(
+        canvas,
+        size,
+        'Minute ${numberFormat.format(binaryClock.minute)}',
+      )
+      ..drawBinaryDigit(canvas, size, binaryClock.minute);
 
     canvas.translate(0, size.height / 2);
-    binaryClock.drawText(
-      canvas,
-      size,
-      'Second ${numberFormat.format(binaryClock.second)}',
-    );
-    binaryClock.drawBinaryDigit(canvas, size, binaryClock.second);
+    binaryClock
+      ..drawText(
+        canvas,
+        size,
+        'Second ${numberFormat.format(binaryClock.second)}',
+      )
+      ..drawBinaryDigit(canvas, size, binaryClock.second);
 
     canvas.translate(0, size.height / 2);
-    binaryClock.drawText(
-      canvas,
-      size,
-      'Millisecond ${numberFormat.format(binaryClock.millisecond)}',
-    );
-    binaryClock.drawBinaryDigit(canvas, size, binaryClock.millisecond);
+    binaryClock
+      ..drawText(
+        canvas,
+        size,
+        'Millisecond ${numberFormat.format(binaryClock.millisecond)}',
+      )
+      ..drawBinaryDigit(canvas, size, binaryClock.millisecond);
   }
 
   @override
