@@ -40,7 +40,7 @@ class BinaryClock {
             width: size.width / 5,
             height: size.height / 5,
           ),
-          const Radius.circular(8),
+          const Radius.circular(4),
         ),
         paint
           ..style = binary[i] ? PaintingStyle.fill : PaintingStyle.stroke
@@ -56,7 +56,7 @@ class BinaryClock {
         text: text,
         style: TextStyle(
           color: Colors.orange,
-          fontSize: 24,
+          fontSize: size.width / 8,
           fontWeight: FontWeight.bold,
           fontFamily: GoogleFonts.oxanium().fontFamily,
           shadows: const [

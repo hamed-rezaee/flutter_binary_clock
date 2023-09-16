@@ -19,7 +19,7 @@ class BinaryClockPainter extends CustomPainter {
     );
     binaryClock.drawBinaryDigit(canvas, size, binaryClock.hour);
 
-    canvas.translate(0, 92);
+    canvas.translate(0, size.height / 2);
     binaryClock.drawText(
       canvas,
       size,
@@ -27,7 +27,7 @@ class BinaryClockPainter extends CustomPainter {
     );
     binaryClock.drawBinaryDigit(canvas, size, binaryClock.minute);
 
-    canvas.translate(0, 92);
+    canvas.translate(0, size.height / 2);
     binaryClock.drawText(
       canvas,
       size,
@@ -35,7 +35,7 @@ class BinaryClockPainter extends CustomPainter {
     );
     binaryClock.drawBinaryDigit(canvas, size, binaryClock.second);
 
-    canvas.translate(0, 92);
+    canvas.translate(0, size.height / 2);
     binaryClock.drawText(
       canvas,
       size,
