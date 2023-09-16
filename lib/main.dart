@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_binary_clock/binary_clock.dart';
+import 'package:flutter_binary_clock/binary_clock_painter.dart';
+
 void main() => runApp(const MainApp());
 
 class MainApp extends StatelessWidget {
@@ -7,10 +10,19 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    final BinaryClock binaryClock = BinaryClock();
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        backgroundColor: Colors.black,
+        body: StreamBuilder(
+          stream: binaryClock.update(),
+          initialData: binaryClock,
+          builder: (context, snapshot) => CustomPaint(
+            size: const Size(200, 200),
+            painter: BinaryClockPainter(snapshot.data!),
+          ),
         ),
       ),
     );
