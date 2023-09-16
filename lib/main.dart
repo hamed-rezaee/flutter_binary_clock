@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_binary_clock/binary_clock.dart';
 import 'package:flutter_binary_clock/binary_clock_painter.dart';
 
+const double size = 200;
+
 void main() => runApp(const MainApp());
 
 class MainApp extends StatelessWidget {
@@ -20,7 +22,7 @@ class MainApp extends StatelessWidget {
           stream: binaryClock.update(),
           initialData: binaryClock,
           builder: (context, snapshot) => CustomPaint(
-            size: const Size(200, 200),
+            size: const Size(size, size),
             painter: BinaryClockPainter(snapshot.data!),
           ),
         ),
