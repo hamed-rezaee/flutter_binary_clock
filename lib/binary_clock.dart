@@ -89,7 +89,7 @@ class BinaryClock {
             borderRadius,
           ),
           paint
-            ..color = Colors.green.withOpacity(0.3)
+            ..color = Colors.green.withOpacity(0.5)
             ..style = PaintingStyle.stroke,
         )
         ..drawRRect(
@@ -98,7 +98,9 @@ class BinaryClock {
             borderRadius,
           ),
           paint
-            ..color = hourBinary[i] ? Colors.green[900]! : Colors.transparent
+            ..color = hourBinary[i]
+                ? Colors.green.withOpacity(0.5)
+                : Colors.transparent
             ..style = PaintingStyle.fill,
         )
         ..drawRRect(
@@ -111,7 +113,9 @@ class BinaryClock {
             borderRadius,
           ),
           paint
-            ..color = minuteBinary[i] ? Colors.green[600]! : Colors.transparent
+            ..color = minuteBinary[i]
+                ? Colors.green.withOpacity(0.5)
+                : Colors.transparent
             ..style = PaintingStyle.fill,
         )
         ..drawRRect(
@@ -124,7 +128,9 @@ class BinaryClock {
             borderRadius,
           ),
           paint
-            ..color = secondBinary[i] ? Colors.green[300]! : Colors.transparent
+            ..color = secondBinary[i]
+                ? Colors.green.withOpacity(0.5)
+                : Colors.transparent
             ..style = PaintingStyle.fill,
         )
         ..drawRRect(
@@ -137,8 +143,9 @@ class BinaryClock {
             borderRadius,
           ),
           paint
-            ..color =
-                millisecondBinary[i] ? Colors.green[100]! : Colors.transparent
+            ..color = millisecondBinary[i]
+                ? Colors.green.withOpacity(0.7)
+                : Colors.transparent
             ..style = PaintingStyle.fill,
         );
     }
@@ -176,7 +183,7 @@ class BinaryClock {
   List<bool> _getBinary(int value) {
     final List<bool> binary = <bool>[];
 
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 10; i++) {
       binary.add(value % 2 == 1);
       value = value ~/ 2;
     }
